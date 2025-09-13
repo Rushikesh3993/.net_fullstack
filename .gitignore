@@ -1,0 +1,68 @@
+## Ignore Visual Studio temporary files, build results, and cache
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio cache/options directory
+.vs/
+.vscode/
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Others
+*.dbmdl
+*.jfm
+*.pdb
+*.cache
+*.log
+*.bak
+*.backup
+*.tmp
+*.temp
+*.swp
+*.DS_Store
+Thumbs.db
+
+# IIS Express
+.vscode/
+.ionide/
+iisexpress/
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Azure
+.publish/
+*.azurePubxml
+
+# Publish output
+*.publish.xml
+PublishProfiles/

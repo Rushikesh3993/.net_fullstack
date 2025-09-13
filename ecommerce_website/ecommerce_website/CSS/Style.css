@@ -1,0 +1,18 @@
+﻿.header {
+    width: 100%;
+    overflow: hidden; /* hides any overflow if image is bigger */
+}
+
+    .header img {
+        width: 100%; /* full width */
+        height: 150px; /* set desired height (try 150–250px) */
+        object-fit: cover; /* crops image nicely without distortion */
+    }
+.nav {
+    display: flex;
+    justify-content: space-around; /* or space-between */
+    align-items: center;
+    height: 70px;
+    border:groove;
+    font-size:x-large;
+}

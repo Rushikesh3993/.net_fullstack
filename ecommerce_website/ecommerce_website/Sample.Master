@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Sample.master.cs" Inherits="ecommerce_website.Sample" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/Style.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <img src="images/header-40.png" />
+
+        </div>
+
+        <div class="nav">
+            <a href="Tv.aspx" class="btn btn-info">Tv</a>
+            <a href="Laptop.aspx" class="btn btn-info">Laptop</a>
+            <a href="Fridge.aspx" class="btn btn-info">Fridge</a>
+            <a href="Cloths.aspx" class="btn btn-info">Cloths</a>
+
+        </div>
+
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="footer bg-info text-white py-3">
+            <div class="text-center">
+                <p class="mb-0">© 2025 Rushi. All Rights Reserved.</p>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+</html>

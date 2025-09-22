@@ -67,15 +67,74 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="AdminLoginHandler.aspx" />
+    <Content Include="Admin_aprove.aspx" />
+    <Content Include="ApproveDoctor.aspx" />
+    <Content Include="DoctorDashboard.aspx" />
+    <Content Include="DoctorLogin.aspx" />
+    <Content Include="DoctorLoginHandler.aspx" />
     <Content Include="DoctorReg.aspx" />
     <Content Include="images\cfirst.png" />
+    <Content Include="images\csecond.jpg" />
+    <Content Include="images\cthird.jpg" />
     <Content Include="index_home.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="SaveDoctor.aspx" />
     <Content Include="SavepatientInfo.aspx" />
     <Content Include="Web.config" />
     <Content Include="PatientApp.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLoginHandler.aspx.cs">
+      <DependentUpon>AdminLoginHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLoginHandler.aspx.designer.cs">
+      <DependentUpon>AdminLoginHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_aprove.aspx.cs">
+      <DependentUpon>Admin_aprove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_aprove.aspx.designer.cs">
+      <DependentUpon>Admin_aprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApproveDoctor.aspx.cs">
+      <DependentUpon>ApproveDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApproveDoctor.aspx.designer.cs">
+      <DependentUpon>ApproveDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorDashboard.aspx.cs">
+      <DependentUpon>DoctorDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorDashboard.aspx.designer.cs">
+      <DependentUpon>DoctorDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorLogin.aspx.cs">
+      <DependentUpon>DoctorLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorLogin.aspx.designer.cs">
+      <DependentUpon>DoctorLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorLoginHandler.aspx.cs">
+      <DependentUpon>DoctorLoginHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorLoginHandler.aspx.designer.cs">
+      <DependentUpon>DoctorLoginHandler.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DoctorReg.aspx.cs">
       <DependentUpon>DoctorReg.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,6 +148,13 @@
     </Compile>
     <Compile Include="index_home.aspx.designer.cs">
       <DependentUpon>index_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main_clinic.Master.cs">
       <DependentUpon>Main_clinic.Master</DependentUpon>

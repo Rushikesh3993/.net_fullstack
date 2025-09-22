@@ -34,13 +34,11 @@
 
 
 
-
                                     String path = "Data Source= LAPTOP-J203V7TL\\SQLEXPRESS; Initial Catalog=clinic; Trusted_Connection=true;";
                                     SqlConnection con = new SqlConnection(path);
                                     con.Open();
+                                    SqlCommand cmd = new SqlCommand("SELECT did, dname FROM doctor WHERE isApproved = 1", con);
 
-
-                                    SqlCommand cmd = new SqlCommand("select did ,dname from doctor", con);
 
                                     SqlDataReader br = cmd.ExecuteReader();
 

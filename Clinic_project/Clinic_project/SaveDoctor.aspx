@@ -14,31 +14,36 @@
         d = Request.Params["dusername"];
         e = Request.Params["dpassword"];
 
-      string path = @"Data Source=LAPTOP-J203V7TL\SQLEXPRESS; Initial Catalog=clinic; Trusted_Connection=true;";
+        string path = @"Data Source=LAPTOP-J203V7TL\SQLEXPRESS; Initial Catalog=clinic; Trusted_Connection=true;";
 
-    using(SqlConnection con = new SqlConnection(path))
-    {
-        con.Open();
-
-        string query = "INSERT INTO doctor (dname, demail, dedu, username, password, isApproved) " +
-                       "VALUES (@dname, @demail, @dedu, @username, @password, 0)";
-
-        using(SqlCommand cmd = new SqlCommand(query, con))
+        using (SqlConnection con = new SqlConnection(path))
         {
-            cmd.Parameters.AddWithValue("@dname", a);
-            cmd.Parameters.AddWithValue("@demail", b);
-            cmd.Parameters.AddWithValue("@dedu", c);
-            cmd.Parameters.AddWithValue("@username", d);
-            cmd.Parameters.AddWithValue("@password", e);
+            con.Open();
 
-            int x = cmd.ExecuteNonQuery();
+            string query = "INSERT INTO doctor (dname, demail, dedu, username, password, isApproved) " +
+                           "VALUES (@dname, @demail, @dedu, @username, @password, 0)";
 
-            if(x > 0)
-                Response.Write("Registration Successful. Waiting for Admin Approval.");
-            else
-                Response.Write("Registration Failed. Try Again!");
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@dname", a);
+                cmd.Parameters.AddWithValue("@demail", b);
+                cmd.Parameters.AddWithValue("@dedu", c);
+                cmd.Parameters.AddWithValue("@username", d);
+                cmd.Parameters.AddWithValue("@password", e);
+
+                int x = cmd.ExecuteNonQuery();
+
+                if (x > 0)
+                {
+                    Response.Write("<script>alert('Doctor Registration Successful. Waiting for Admin Approval.');window.location='DoctorReg.aspx';</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Registration Failed. Try Again!');window.location='DoctorReg.aspx';</script>");
+                }
+
+            }
         }
-    }
 
 
     %>

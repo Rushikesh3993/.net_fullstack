@@ -35,6 +35,12 @@ namespace day2_mvc.Controllers
 
             ViewData["m"] = s1;
 
+            int e = 10, j = 23, t;
+            t = e + j;
+            ViewBag.ans = t;
+
+
+
             return View();
         }
     }

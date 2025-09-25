@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+    int[] arr = (int[])ViewData["z"]; 
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Welcome From MVC : @ViewData["x"]</h1>
+        <h3>Your Addition is : @ViewData["y"]</h3>
+
+        @{ 
+            for(int k= 0; k < arr.Length; k++)
+            {
+                <h3>@arr[k]</h3>
+            }
+
+
+}
+
+        @{  foreach(int k in (int[])ViewData["d"])
+                {
+                <h3>@k</h3>
+            }
+        }
+
+        @{ 
+            foreach(String p in (String[])ViewData["f"])
+            {
+                <h3>@p</h3>
+            }
+        }
+
+        @{ 
+            var x = (day2_mvc.Models.Staff)ViewData["m"];
+
+            <h3>@x.sid</h3>
+            <h3>@x.sname</h3>
+            <h3>@x.semail</h3>
+        }
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>About</title>
+</head>
+<body>
+    <div> 
+        @Html.ActionLink("Click me", "Sample", "Home")
+
+        @Html.Partial("Monday_view")
+
+        @{ 
+            Html.RenderPartial("Monday_view");
+        }
+
+        @Html.Label("Enter Username : ") @Html.TextBox("t1", "", new { style = "font-size: 20px;Background-color:pink;" }) <br /> <br />
+
+        @Html.Label("Enter Email : ") @Html.TextBox("t2") <br /> 
+
+        @Html.Label("Enter Password : ") @Html.Password("t3") <br /> <br /> 
+
+        @Html.Label("Male") @Html.RadioButton("Gender", "Male")
+        @Html.Label("Female") @Html.RadioButton("Gender", "Female") <br /><br />
+
+        @Html.DropDownList("wdl",new SelectList(new[] {"BCA","MCA","12th","10th","BHMS"}),"Select one")
+
+    </div>
+</body>
+</html>

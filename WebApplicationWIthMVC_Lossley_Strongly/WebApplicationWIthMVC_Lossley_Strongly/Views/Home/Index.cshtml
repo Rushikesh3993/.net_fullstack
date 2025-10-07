@@ -1,0 +1,39 @@
+﻿@model List<WebApplicationWIthMVC_Lossley_Strongly.Models.Customer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @{ 
+//var x = ViewBag.obj;
+
+        @*<h1>@ViewBag.obj.cid</h1>*@
+
+        @*<h1>@x.cid</h1>
+        <h2>@x.cname</h2>
+        <h3>@x.cemail</h3>*@
+
+
+        @*<h2>@Model.cemail</h2>*@
+    }
+
+    @{ 
+        foreach( var x in Model)
+            {
+                <h3>@x.cid</h3>
+                <h3>@x.cname</h3>
+                <h3>@x.cemail</h3>
+            }
+    }
+
+
+</body>
+</html>

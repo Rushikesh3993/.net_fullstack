@@ -1,0 +1,30 @@
+﻿@model WebApplication2MVC_practice.Models.Form
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+
+        @using (Html.BeginForm())
+        {
+
+            <div>
+                @Html.LabelFor(f =>f.fid, "Enter your id: ")
+                @Html.TextBoxFor(f =>f.fid)
+
+            </div>
+
+
+        }
+    </div>
+</body>
+</html>

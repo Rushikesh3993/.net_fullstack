@@ -7,7 +7,7 @@ namespace WebApplication2MVC_practice.Models
 {
     public class Form
     {
-        public string fid { get; set; }
+        public int fid { get; set; }
         public string fname { get; set; }    
 
         public string femail { get; set; }

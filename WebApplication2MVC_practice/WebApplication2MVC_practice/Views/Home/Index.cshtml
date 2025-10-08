@@ -14,17 +14,34 @@
 <body>
     <div>
 
-        @using (Html.BeginForm())
-        {
+        @using (Html.BeginForm("Index","Home",FormMethod.Post))
+        { 
 
             <div>
-                @Html.LabelFor(f =>f.fid, "Enter your id: ")
-                @Html.TextBoxFor(f =>f.fid)
+                @Html.LabelFor(f => f.fid, "Enter your id: ")
+                @Html.TextBoxFor(f => f.fid) <br /><br />
+
+                @Html.LabelFor(f => f.fname, "Enter your name: ")
+                @Html.TextBoxFor(f => f.fname) <br /><br />
+
+                @Html.LabelFor(f => f.femail, "Enter your email: ")
+                @Html.TextBoxFor(f => f.femail) <br /><br />
+
+                @Html.LabelFor(f => f.fpass, "Enter your pass: ")
+                @Html.PasswordFor(f => f.fpass) <br /><br />
+
+                <button>Submit</button>
 
             </div>
 
 
         }
+        @*@ViewBag.x
+        @ViewBag.y
+        @ViewBag.z
+        @ViewBag.w*@
+
+        @ViewBag.msg
     </div>
 </body>
 </html>

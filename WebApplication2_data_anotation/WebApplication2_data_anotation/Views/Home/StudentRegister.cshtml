@@ -1,4 +1,4 @@
-﻿@model WebApplication2_data_anotation.Models
+﻿@model WebApplication2_data_anotation.Models.Student
 @{
     Layout = null;
 }
@@ -9,16 +9,29 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>StudentRegister</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 </head>
 <body>
-    <div> 
+    <div>
 
         <h1>Studnet Registration Form</h1>
 
-        @using (Html.BeginForm())
-            {
+        @using (Html.BeginForm("StudentRegister", "Home", FormMethod.Post))
+        {
 
-            }
+            @Html.LabelFor(m => m.sid, "Enter Your Id: ") @Html.TextBoxFor(m => m.sid) @Html.ValidationMessageFor(m => m.sid, "", new { @class = "text-danger" }) <br /><br />
+            @Html.LabelFor(m => m.sname, "Enter Your Name: ") @Html.TextBoxFor(m => m.sname) @Html.ValidationMessageFor(m => m.sname, "", new { @class = "text-danger" })<br /><br />
+            @Html.LabelFor(m => m.semail, "Enter Your Email: ") @Html.TextBoxFor(m => m.semail) @Html.ValidationMessageFor(m => m.semail, "", new { @class = "text-danger" })<br /><br />
+            @Html.LabelFor(m => m.sage, "Enter Your Age : ") @Html.TextBoxFor(m => m.sage) @Html.ValidationMessageFor(m => m.sage, "", new { @class = "text-danger" })<br /><br />
+            @Html.LabelFor(m => m.spass, "Enter Your Password : ") @Html.PasswordFor(m => m.spass) @Html.ValidationMessageFor(m => m.spass, "", new { @class = "text-danger" })<br /><br />
+            @Html.LabelFor(m => m.scpass, "Confirm Your password : ") @Html.PasswordFor(m => m.scpass) @Html.ValidationMessageFor(m => m.scpass, "", new { @class = "text-danger" })<br /><br />
+            @Html.LabelFor(m => m.sdate, "Enter Date : ") @Html.EditorFor(m => m.sdate) @Html.ValidationMessageFor(m => m.sdate, "", new { @class = "text-danger" })<br /><br />
+
+
+            <button type="submit">Register</button>
+            @ViewBag.sus
+        }
     </div>
 </body>
 </html>

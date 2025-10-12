@@ -1,0 +1,182 @@
+﻿@model WebApplication2Code_first_approach_entity.Models.Students
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Edit Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ---------- Global Styles ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f1f5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            padding: 30px 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+            .container h1 {
+                text-align: center;
+                color: #0077ff;
+                margin-bottom: 25px;
+                font-size: 1.8rem;
+            }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+            input:focus, select:focus, textarea:focus {
+                border-color: #0077ff;
+            }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .gender-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+            .gender-group label {
+                font-weight: 400;
+            }
+
+        .btn-submit {
+            background-color: #0077ff;
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .btn-submit:hover {
+                background-color: #005fd4;
+            }
+
+        .note {
+            text-align: center;
+            color: #777;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Edit Form</h1>
+        <form action="/Student/EditStudent/" method="post">
+            <div>
+
+                <input type="hidden" id="fullname" name="sid" value="@Model.sid" placeholder="Enter your full name" required>
+            </div>
+            <div>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" value="@Model.sname" name="sname" placeholder="Enter your full name" required>
+            </div>
+
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" value="@Model.semail" name="semail" placeholder="Enter your email" required>
+            </div>
+
+            <div>
+                <label for="phone">Mobile Number:</label>
+                <input type="tel" id="phone" value="@Model.sphone" name="sphone" placeholder="Enter your number" pattern="[0-9]{10}" required>
+            </div>
+
+            <div>
+                <label>Gender:</label>
+                <div class="gender-group">
+                    <label>
+                        <input type="radio" name="sgender" value="Male" @(Model.sgender == "Male" ? "checked" : "")> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="sgender" value="Female" @(Model.sgender == "Female" ? "checked" : "")> Female
+                    </label>
+                    <label>
+                        <input type="radio" name="sgender" value="Other" @(Model.sgender == "Other" ? "checked" : "")> Other
+                    </label>
+                </div>
+            </div>
+
+
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" value="@Model.sdob" id="dob" name="sdob" required>
+            </div>
+
+            <div>
+                <label for="course">Select Course:</label>
+                <select id="course" name="scourse" required>
+                    <option value="">-- Select Course --</option>
+                    <option value="bca" @(Model.scourse == "bca" ? "selected" : "")>BCA</option>
+                    <option value="bsc" @(Model.scourse == "bsc" ? "selected" : "")>B.Sc Computer Science</option>
+                    <option value="btech" @(Model.scourse == "btech" ? "selected" : "")>B.Tech</option>
+                    <option value="mba" @(Model.scourse == "mba" ? "selected" : "")>MBA</option>
+                    <option value="mca" @(Model.scourse == "mca" ? "selected" : "")>MCA</option>
+                </select>
+            </div>
+             
+            <div>
+                <label for="address">Address:</label>
+                <textarea id="address" name="saddress" placeholder="Enter your full address" required>@Model.saddress</textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Update</button>
+
+            <p class="note">All fields are mandatory. Make sure details are correct before submitting.</p>
+        </form>
+        @TempData["SuccessMessage"]
+    </div>
+
+</body>
+</html>
+

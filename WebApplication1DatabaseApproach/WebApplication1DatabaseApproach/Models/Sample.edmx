@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="restroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cname" Type="varchar" MaxLength="100" />
+          <Property Name="cemail" Type="nvarchar" MaxLength="100" />
+          <Property Name="cphone" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="odate" Type="nvarchar" MaxLength="100" />
+          <Property Name="oname" Type="nvarchar" MaxLength="100" />
+          <Property Name="oqty" Type="nvarchar" MaxLength="100" />
+          <Property Name="price" Type="nvarchar" MaxLength="100" />
+          <Property Name="ostatus" Type="nvarchar" MaxLength="100" />
+          <Property Name="custId" Type="int" />
+        </EntityType>
+        <Association Name="FK__orders__custId__4BAC3F29">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="cid" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="custId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="restroModelStoreContainer">
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__orders__custId__4BAC3F29" Association="Self.FK__orders__custId__4BAC3F29">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="restroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cemail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cphone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="orders" Relationship="Self.FK__orders__custId__4BAC3F29" FromRole="customer" ToRole="orders" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="odate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="oname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="oqty" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ostatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="custId" Type="Int32" />
+          <NavigationProperty Name="customer" Relationship="Self.FK__orders__custId__4BAC3F29" FromRole="orders" ToRole="customer" />
+        </EntityType>
+        <Association Name="FK__orders__custId__4BAC3F29">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="orders" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="cid" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="custId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="restroEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="orders" EntityType="Self.order" />
+          <AssociationSet Name="FK__orders__custId__4BAC3F29" Association="Self.FK__orders__custId__4BAC3F29">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="restroModelStoreContainer" CdmEntityContainer="restroEntities">
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="restroModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="cname" ColumnName="cname" />
+                <ScalarProperty Name="cemail" ColumnName="cemail" />
+                <ScalarProperty Name="cphone" ColumnName="cphone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="restroModel.order">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="oid" ColumnName="oid" />
+                <ScalarProperty Name="odate" ColumnName="odate" />
+                <ScalarProperty Name="oname" ColumnName="oname" />
+                <ScalarProperty Name="oqty" ColumnName="oqty" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="ostatus" ColumnName="ostatus" />
+                <ScalarProperty Name="custId" ColumnName="custId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

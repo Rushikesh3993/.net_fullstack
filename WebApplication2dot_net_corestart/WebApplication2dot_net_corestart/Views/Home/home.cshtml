@@ -1,0 +1,324 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Global Styles ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9fafc;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------- Navbar ---------- */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0077ff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #0077ff;
+    }
+
+    .btn-primary {
+      background-color: #0077ff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #005fd4;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 8%;
+      flex-wrap: wrap;
+      background-color: #f0f6ff;
+    }
+
+    .hero-text {
+      flex: 1 1 45%;
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: #222;
+    }
+
+    .hero-text p {
+      margin: 20px 0;
+      color: #555;
+    }
+
+    .hero-text .btn-primary {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+
+    .hero-img {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 10px;
+    }
+
+    /* ---------- About Section ---------- */
+    .about {
+      text-align: center;
+      padding: 80px 8%;
+      background-color: #fff;
+    }
+
+    .about h2 {
+      color: #0077ff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ---------- Features Section ---------- */
+    .features {
+      padding: 80px 8%;
+      text-align: center;
+      background-color: #f9fafc;
+    }
+
+    .features h2 {
+      font-size: 2rem;
+      color: #0077ff;
+      margin-bottom: 40px;
+    }
+
+    .feature-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      background-color: #fff;
+      padding: 25px;
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      color: #0077ff;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- Team Section ---------- */
+    .team {
+      background-color: #fff;
+      padding: 80px 8%;
+      text-align: center;
+    }
+
+    .team h2 {
+      color: #0077ff;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .member {
+      background-color: #f0f6ff;
+      padding: 25px;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .member img {
+      width: 100%;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .member h4 {
+      color: #0077ff;
+      margin-bottom: 5px;
+    }
+
+    .member p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background-color: #111;
+      color: #ccc;
+      padding: 40px 8%;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ---------- Header ---------- -->
+  <header>
+    <div class="logo">Employee Portal</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="/Home/Registration/">Employee Registration</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn-primary">Login</a>
+  </header>
+
+  <!-- ---------- Hero Section ---------- -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to the Employee Management Portal</h1>
+      <p>Streamline HR operations, manage staff details, track attendance, and boost team productivity—all in one place.</p>
+      <a href="#" class="btn-primary">Get Started</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://img.freepik.com/free-vector/office-team-concept-illustration_114360-1125.jpg" alt="Employee Portal">
+    </div>
+  </section>
+
+  <!-- ---------- About Section ---------- -->
+  <section class="about">
+    <h2>About Our Portal</h2>
+    <p>Our Employee Portal simplifies workforce management. Whether you're an HR professional or a team lead, this platform helps you manage employee records, leave applications, and performance reports efficiently.</p>
+  </section>
+
+  <!-- ---------- Features Section ---------- -->
+  <section class="features">
+    <h2>Our Key Features</h2>
+    <div class="feature-list">
+      <div class="feature">
+        <h3>Employee Records</h3>
+        <p>Maintain complete details of all employees in an organized manner.</p>
+      </div>
+      <div class="feature">
+        <h3>Attendance Tracking</h3>
+        <p>Monitor attendance and leave records effortlessly.</p>
+      </div>
+      <div class="feature">
+        <h3>Performance Review</h3>
+        <p>Evaluate employee performance and generate reports easily.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- Team Section ---------- -->
+  <section class="team">
+    <h2>Our Team</h2>
+    <div class="team-members">
+      <div class="member">
+        <img src="https://img.freepik.com/free-photo/smiling-young-indian-man-posing-while-standing-against-white-background_23-2149460985.jpg" alt="John">
+        <h4>Ravi Kumar</h4>
+        <p>HR Manager</p>
+      </div>
+      <div class="member">
+        <img src="https://img.freepik.com/free-photo/portrait-young-businesswoman_23-2149103971.jpg" alt="Sarah">
+        <h4>Priya Sharma</h4>
+        <p>Team Lead</p>
+      </div>
+      <div class="member">
+        <img src="https://img.freepik.com/free-photo/portrait-handsome-businessman_23-2149381027.jpg" alt="Mike">
+        <h4>Arjun Mehta</h4>
+        <p>Project Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- Footer ---------- -->
+  <footer>
+    <p>© 2025 Employee Portal. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

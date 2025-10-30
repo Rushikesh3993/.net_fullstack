@@ -7,16 +7,16 @@ using WebApplication1DatabaseApproach.Models;
 
 namespace WebApplication1DatabaseApproach.Controllers
 {
-    public class CustomerController : Controller
+    public class OrderController : Controller
     {
 
-        restroEntities r1 = new restroEntities();
+      public  restroEntities r1 = new restroEntities();
 
-        // GET: Home
+        // GET: Order
         public ActionResult Index()
         {
-            var x=r1.customers.ToList();
-            return View(x);
+
+            return View();
         }
     }
 }

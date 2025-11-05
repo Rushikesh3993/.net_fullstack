@@ -12,6 +12,7 @@ namespace WebApplication1API.Controllers
     public class CustomerController : ApiController
     {
 
+        
         //[HttpGet]
         //[Route("display")]
 
@@ -90,7 +91,7 @@ namespace WebApplication1API.Controllers
 
 
        [HttpPut]
-        [Route("{id:int}")]
+       [Route("{id:int}")]
 
         public IHttpActionResult five(int id,Customer cp)
         {
@@ -108,19 +109,8 @@ namespace WebApplication1API.Controllers
             return  Ok("record Updated");
         }
 
-        //    [HttpPut]
-        //    public String five(int id, Customer cp)
-        //    {
-        //        Customer cm = c1.Customer.Find(id);
-        //        cm.cid = cp.cid;
-        //        cm.cname = cp.cname;
-        //        cm.cemail = cp.cemail;
-        //        cm.cpass = cp.cpass;
 
-        //        c1.SaveChanges();
-        //        return "Record Updated";
-
-        //    }
+        
     }
 }
 

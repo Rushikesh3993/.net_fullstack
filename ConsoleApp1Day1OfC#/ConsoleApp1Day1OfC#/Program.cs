@@ -4,16 +4,16 @@ using System;
 
 namespace ConsoleApp1Day1OfC_Sharp
 {
-  public class Program
+    public class Program
     {
-       
+
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World! here your calculation");
-          
-           
-           Operation obj = new Operation();
+
+
+            Operation obj = new Operation();
             obj.Accept();
             obj.add();
             obj.sub();

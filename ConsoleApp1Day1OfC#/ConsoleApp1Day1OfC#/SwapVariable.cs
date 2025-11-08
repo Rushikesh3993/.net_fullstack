@@ -28,7 +28,15 @@ namespace ConsoleApp1Day1OfC_
             //Console.WriteLine("a = " + a);
             //Console.WriteLine("b = " + b);
 
-            
+            int a = 10;
+            int b = 20;
+
+            Console.WriteLine("before Swap: " +a + " "  +b);
+            Swap(ref a, ref b);
+            //Console.WriteLine("after Swap: : " +a + " " +b);
+            Console.WriteLine($"after Swap: a = {a}, b = {b}");
+
+
         }
     }
 }

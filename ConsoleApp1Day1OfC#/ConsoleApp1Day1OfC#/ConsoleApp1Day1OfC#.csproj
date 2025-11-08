@@ -6,7 +6,7 @@
     <RootNamespace>ConsoleApp1Day1OfC_</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>ConsoleApp1Day1OfC_.SwapVariable</StartupObject>
+    <StartupObject>ConsoleApp1Day1OfC_.sumOfdigit</StartupObject>
   </PropertyGroup>
 
 </Project>

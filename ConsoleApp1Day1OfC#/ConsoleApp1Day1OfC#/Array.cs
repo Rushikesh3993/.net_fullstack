@@ -23,12 +23,46 @@ namespace ConsoleApp1Day1OfC_
             //    Console.WriteLine(arr[i]);
             //}
 
-            string[] city = new string[8];
+            //string[] city = new string[8];
 
-            Console.WriteLine("Enter Your city name");
-            for(int i =1;i <= 8; i++)
+            //Console.WriteLine("Enter Your city name");
+            //for(int i =1;i <= 8; i++)
+            //{
+            //    city[i]  = Console.ReadLine();
+            //}
+
+            //int[,,] a = new int[3,2,2] this 3,2,2 is index 
+            int[,,] a = 
             {
-                city[i]  = Console.ReadLine();
+                {
+                    {1,2},
+                    {3,4}
+
+                },
+
+                {
+                    {5,6},
+                    {7,8}
+                },
+
+                {
+                     {9,10},
+                    {11,12}
+                }
+
+            };
+                                      //oth index means new int[3]
+            for(int i = 0; i < a.GetLength(0); i++)
+            {                        //1th index means new int[2]
+                for (int j = 0;  j < a.GetLength(1); j++)
+                {                    //2th index means new int[3]
+                    for (int k = 0; k < a.GetLength(2); k++)
+                    {
+                        Console.Write(a[i, j, k] + " ");
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
             }
         }
     }
